@@ -48,7 +48,7 @@ public class Driver {
         }
     }
 
-    // Manual generator (NO shortcuts)
+    // Manual generator
     public static String generateText(int n) {
 
         String text = "";
