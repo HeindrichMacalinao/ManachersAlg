@@ -16,7 +16,7 @@ public class Driver {
             long startTimeBF = System.nanoTime();
 
             // 2. Execute algorithm
-            int bfComparisons = BruteForcePalindrome.longestPalindrome(testData);
+            long bfComparisons = BruteForcePalindrome.longestPalindrome(testData);
 
             // 3. End time
             long endTimeBF = System.nanoTime();

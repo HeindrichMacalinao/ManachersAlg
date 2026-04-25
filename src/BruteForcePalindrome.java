@@ -1,14 +1,12 @@
 public class BruteForcePalindrome {
 
-    // Returns number of comparisons
-    public static int longestPalindrome(String text) {
+    public static long longestPalindrome(String text) {
 
         int n = text.length();
-        int comparisons = 0;
+        long comparisons = 0; //  FIXED DI NA NEGATIVE YEYY
         int maxLength = 0;
 
         for (int i = 0; i < n; i++) {
-
             for (int j = i; j < n; j++) {
 
                 boolean isPalindrome = true;
@@ -17,7 +15,7 @@ public class BruteForcePalindrome {
                 int right = j;
 
                 while (left < right) {
-                    comparisons++;
+                    comparisons++; // IKAW ANG DAHILAN
 
                     if (text.charAt(left) != text.charAt(right)) {
                         isPalindrome = false;
