@@ -1,40 +1,40 @@
-public class BruteForcePalindrome {
+    public class BruteForcePalindrome {
 
-    public static long longestPalindrome(String text) {
+        public static long longestPalindrome(String text) {
 
-        int n = text.length();
-        long comparisons = 0; //  FIXED DI NA NEGATIVE YEYY
-        int maxLength = 0;
+            int n = text.length();
+            long comparisons = 0;
+            int maxLength = 0;
 
-        for (int i = 0; i < n; i++) {
-            for (int j = i; j < n; j++) {
+            for (int i = 0; i < n; i++) {
+                for (int j = i; j < n; j++) {
 
-                boolean isPalindrome = true;
+                    boolean isPalindrome = true;
 
-                int left = i;
-                int right = j;
+                    int left = i;
+                    int right = j;
 
-                while (left < right) {
-                    comparisons++; // IKAW ANG DAHILAN
+                    while (left < right) {
+                        comparisons++;
 
-                    if (text.charAt(left) != text.charAt(right)) {
-                        isPalindrome = false;
-                        break;
+                        if (text.charAt(left) != text.charAt(right)) {
+                            isPalindrome = false;
+                            break;
+                        }
+
+                        left++;
+                        right--;
                     }
 
-                    left++;
-                    right--;
-                }
-
-                if (isPalindrome) {
-                    int length = j - i + 1;
-                    if (length > maxLength) {
-                        maxLength = length;
+                    if (isPalindrome) {
+                        int length = j - i + 1;
+                        if (length > maxLength) {
+                            maxLength = length;
+                        }
                     }
                 }
             }
-        }
 
-        return comparisons;
+            return comparisons;
+        }
     }
-}
