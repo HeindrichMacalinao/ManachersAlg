@@ -78,10 +78,17 @@ public class ManacherVisualizer {
 
         int start = (centerIndex - maxLen) / 2;
 
-        System.out.println("\n=================================");
-        System.out.println("Longest Palindrome: " +
-                input.substring(start, start + maxLen));
+
+        String result = "";
+        for (int i = start; i < start + maxLen; i++) {
+            result += input.charAt(i);
+        }
+
+        System.out.println("--------------------------------------------------");
+        System.out.println("Longest Palindrome: " + result);
         System.out.println("Length: " + maxLen);
+        System.out.println("\n=================================");
+        System.out.println("\n");
     }
 
     private static void printArray(char[] arr) {
