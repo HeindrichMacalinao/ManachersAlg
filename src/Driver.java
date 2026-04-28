@@ -4,6 +4,7 @@ public class Driver {
         ManacherVisualizer.visualize("abcacbbc");
         int[] sizes = {10, 100, 1000, 10000};
 
+        System.out.println("\n==========Chart Of Truth==========");
         for (int n : sizes) {
 
             String testData = generateText(n);
@@ -30,7 +31,7 @@ public class Driver {
 
             long startTimeM = System.nanoTime();
 
-            int mComparisons = Manacher.longestPalindrome(testData);
+            long mComparisons = Manacher.longestPalindrome(testData);
 
             long endTimeM = System.nanoTime();
 
@@ -40,6 +41,7 @@ public class Driver {
             // 5. OUTPUT (Chart of Truth)
             // =========================
 
+
             System.out.println("n = " + n +
                     " | BF Time = " + durationBF + " ns" +
                     " | BF Comp = " + bfComparisons +
@@ -48,7 +50,6 @@ public class Driver {
         }
     }
 
-    // Manual generator
     public static String generateText(int n) {
 
         String text = "";
